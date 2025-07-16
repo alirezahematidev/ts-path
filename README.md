@@ -1,4 +1,4 @@
-# ts-path
+# alias-it
 
 🚀 **Intelligent TypeScript path mapping with auto-discovery and validation**
 
@@ -25,7 +25,7 @@ A powerful Node.js/TypeScript package that automatically discovers, generates, a
 **After:** Run one command and it's done automatically:
 
 ```bash
-npx ts-path generate --merge
+npx alias-it generate --merge
 ```
 
 ## ✨ Features
@@ -43,15 +43,15 @@ npx ts-path generate --merge
 ### Installation
 
 ```bash
-npm install ts-path
+npm install alias-it
 # or
-yarn add ts-path
+yarn add alias-it
 ```
 
 ### Basic Usage
 
 ```typescript
-import { PathMapper, generatePathMappings } from "ts-path";
+import { PathMapper, generatePathMappings } from "alias-it";
 
 // Quick way to generate mappings
 const mappings = await generatePathMappings({
@@ -72,19 +72,19 @@ console.log(mappings);
 
 ```bash
 # Discover potential mappings
-npx ts-path discover
+npx alias-it discover
 
 # Generate and update tsconfig.json
-npx ts-path generate --merge
+npx alias-it generate --merge
 
 # Validate existing mappings
-npx ts-path validate
+npx alias-it validate
 
 # Get suggestions
-npx ts-path suggest
+npx alias-it suggest
 
 # See all available commands
-npx ts-path --help
+npx alias-it --help
 ```
 
 ## 📖 Real-World Examples
@@ -133,7 +133,7 @@ src/
 **After:** One command
 
 ```bash
-npx ts-path generate --merge
+npx alias-it generate --merge
 ```
 
 **Result:** Clean imports in your code
@@ -172,7 +172,7 @@ packages/
 **Command:**
 
 ```bash
-npx ts-path generate --root-dir packages --merge
+npx alias-it generate --root-dir packages --merge
 ```
 
 **Result:** Automatic cross-package imports
@@ -209,7 +209,7 @@ src/
 **Command:**
 
 ```bash
-npx ts-path generate --merge
+npx alias-it generate --merge
 ```
 
 **Result:** All imports automatically updated, no broken references!
@@ -220,10 +220,10 @@ npx ts-path generate --merge
 
 ```bash
 # Check for broken mappings
-npx ts-path validate
+npx alias-it validate
 
 # Get suggestions for improvements
-npx ts-path suggest
+npx alias-it suggest
 ```
 
 **Output:**
@@ -243,7 +243,7 @@ Suggestions:
 Discovers potential path mappings in the project.
 
 ```bash
-npx ts-path discover [options]
+npx alias-it discover [options]
 ```
 
 **Options:**
@@ -254,7 +254,7 @@ npx ts-path discover [options]
 **Example:**
 
 ```bash
-npx ts-path discover --root-dir ./src --output ./discovered-paths.json
+npx alias-it discover --root-dir ./src --output ./discovered-paths.json
 ```
 
 ### generate
@@ -262,7 +262,7 @@ npx ts-path discover --root-dir ./src --output ./discovered-paths.json
 Generates path mappings and optionally updates tsconfig.json.
 
 ```bash
-npx ts-path generate [options]
+npx alias-it generate [options]
 ```
 
 **Options:**
@@ -277,13 +277,13 @@ npx ts-path generate [options]
 
 ```bash
 # Generate and merge with existing mappings
-npx ts-path generate --merge
+npx alias-it generate --merge
 
 # Generate and replace all mappings
-npx ts-path generate --no-merge
+npx alias-it generate --no-merge
 
 # Generate for specific directory and save to file
-npx ts-path generate --root-dir ./packages --output ./path-mappings.json
+npx alias-it generate --root-dir ./packages --output ./path-mappings.json
 ```
 
 ### validate
@@ -291,7 +291,7 @@ npx ts-path generate --root-dir ./packages --output ./path-mappings.json
 Validates existing path mappings in tsconfig.json.
 
 ```bash
-npx ts-path validate [options]
+npx alias-it validate [options]
 ```
 
 **Options:**
@@ -302,7 +302,7 @@ npx ts-path validate [options]
 **Example:**
 
 ```bash
-npx ts-path validate --tsconfig ./packages/app/tsconfig.json
+npx alias-it validate --tsconfig ./packages/app/tsconfig.json
 ```
 
 ### suggest
@@ -310,7 +310,7 @@ npx ts-path validate --tsconfig ./packages/app/tsconfig.json
 Gets suggestions for path mappings.
 
 ```bash
-npx ts-path suggest [options]
+npx alias-it suggest [options]
 ```
 
 **Options:**
@@ -320,7 +320,7 @@ npx ts-path suggest [options]
 **Example:**
 
 ```bash
-npx ts-path suggest --root-dir ./src
+npx alias-it suggest --root-dir ./src
 ```
 
 ### update
@@ -328,7 +328,7 @@ npx ts-path suggest --root-dir ./src
 Updates tsconfig.json with new mappings from a file.
 
 ```bash
-npx ts-path update --output <path> [options]
+npx alias-it update --output <path> [options]
 ```
 
 **Options:**
@@ -342,7 +342,7 @@ npx ts-path update --output <path> [options]
 **Example:**
 
 ```bash
-npx ts-path update --output ./custom-mappings.json --merge
+npx alias-it update --output ./custom-mappings.json --merge
 ```
 
 ## 📖 API Reference
@@ -352,7 +352,7 @@ npx ts-path update --output ./custom-mappings.json --merge
 The main class for path mapping operations.
 
 ```typescript
-import { PathMapper } from "ts-path";
+import { PathMapper } from "alias-it";
 
 const mapper = new PathMapper({
   rootDir: "./src",
@@ -420,7 +420,7 @@ await mapper.updateTsConfig({
 Quick function to generate path mappings.
 
 ```typescript
-import { generatePathMappings } from "ts-path";
+import { generatePathMappings } from "alias-it";
 
 const mappings = await generatePathMappings({
   rootDir: "./src",
@@ -432,7 +432,7 @@ const mappings = await generatePathMappings({
 Quick function to validate existing mappings.
 
 ```typescript
-import { validatePathMappings } from "ts-path";
+import { validatePathMappings } from "alias-it";
 
 const isValid = await validatePathMappings("./tsconfig.json");
 ```
@@ -442,7 +442,7 @@ const isValid = await validatePathMappings("./tsconfig.json");
 Quick function to update tsconfig.json.
 
 ```typescript
-import { updateTsConfigMappings } from "ts-path";
+import { updateTsConfigMappings } from "alias-it";
 
 await updateTsConfigMappings({
   "@components": "src/components",
@@ -456,7 +456,7 @@ await updateTsConfigMappings({
 1. **Initialize your TypeScript project**
 2. **Run the mapper:**
    ```bash
-   npx ts-path generate --merge
+   npx alias-it generate --merge
    ```
 3. **Start coding with clean imports!**
 
@@ -464,15 +464,15 @@ await updateTsConfigMappings({
 
 1. **Validate current mappings:**
    ```bash
-   npx ts-path validate
+   npx alias-it validate
    ```
 2. **Get suggestions:**
    ```bash
-   npx ts-path suggest
+   npx alias-it suggest
    ```
 3. **Update mappings:**
    ```bash
-   npx ts-path generate --merge
+   npx alias-it generate --merge
    ```
 
 ### For CI/CD Integration
@@ -490,13 +490,13 @@ jobs:
         with:
           node-version: "18"
       - run: npm install
-      - run: npx ts-path validate
+      - run: npx alias-it validate
 ```
 
 ## 📁 Project Structure
 
 ```
-ts-path/
+alias-it/
 ├── src/
 │   ├── types/
 │   │   └── index.ts          # TypeScript type definitions
@@ -581,6 +581,7 @@ This project uses [release-it](https://github.com/release-it/release-it) for aut
 
 1. Make sure your working directory is clean and on the `main` branch.
 2. Run:
+
    ```bash
    yarn release
    ```

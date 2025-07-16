@@ -1,11 +1,11 @@
 {
-  "name": "ts-path",
+  "name": "alias-it",
   "version": "1.0.0",
   "description": "Intelligent TypeScript path mapping with auto-discovery and validation",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": {
-    "ts-path": "dist/cli.js"
+    "alias-it": "dist/cli.js"
   },
   "files": [
     "dist",
