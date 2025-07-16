@@ -1,0 +1,68 @@
+{
+  "name": "ts-path",
+  "version": "1.0.0",
+  "description": "Intelligent TypeScript path mapping with auto-discovery and validation",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "ts-path": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run clean && npm run build && npm run test",
+    "release": "release-it",
+    "changelog": "release-it --only-version --changelog"
+  },
+  "keywords": [
+    "typescript",
+    "path-mapping",
+    "tsconfig",
+    "imports",
+    "auto-discovery",
+    "development-tools"
+  ],
+  "author": "Alireza Hemati",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alirezahematidev/ts-path.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alirezahematidev/ts-path/issues"
+  },
+  "homepage": "https://github.com/alirezahematidev/ts-path#readme",
+  "devDependencies": {
+    "@release-it/conventional-changelog": "^10.0.1",
+    "@types/fs-extra": "^11.0.4",
+    "@types/jest": "^29.5.0",
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "jest": "^29.5.0",
+    "release-it": "^19.0.4",
+    "ts-jest": "^29.1.0",
+    "tsup": "^8.5.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@types/commander": "^2.12.5",
+    "commander": "^14.0.0",
+    "fs-extra": "^11.1.0",
+    "glob": "^10.3.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
